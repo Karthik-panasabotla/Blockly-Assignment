@@ -34,17 +34,21 @@ function Controls({
           </span>
         </p>
       </div>
-      <div className="mt-4 flex gap-2">
+      <div className="flex gap-4 justify-center mt-6 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 p-4 rounded-2xl shadow-lg">
         <button
           onClick={togglePlay}
-          className="flex-1 px-4 py-2 text-white font-semibold rounded-lg transition"
-          style={{ backgroundColor: isPlaying ? "#ef4444" : "#22c55e" }}
+          className={`flex-1 px-6 py-3 text-white font-semibold rounded-lg shadow-md transform transition-all duration-300 ${
+            isPlaying
+              ? "bg-red-500 hover:bg-red-600"
+              : "bg-green-500 hover:bg-green-600"
+          }`}
         >
           {isPlaying ? "Pause" : "Play"}
         </button>
+
         <button
           onClick={resetSimulation}
-          className="px-4 py-2 bg-gray-200 text-gray-800 font-semibold rounded-lg hover:bg-gray-300 transition"
+          className="px-6 py-3 bg-gray-100 text-gray-900 font-semibold rounded-lg shadow-md hover:bg-gray-200 transform transition-all duration-300"
         >
           Reset
         </button>
